@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Baza | Sign up</title>
+    <link rel="stylesheet" th:href="@{/css/entity-form.css}"/>
+    <link rel="stylesheet" th:href="@{/css/navigation-with-button.css}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
+</head>
+
+<body>
+<div th:replace="fragments/header.html :: header"></div>
+<div class="py-3 entity-form">
+    <form th:method="POST" th:action="@{/signup}" th:object="${user}">
+        <h1 class="h3 mb-3 fw-normal">Sign up</h1>
+
+        <div class="form-floating">
+            <input class="form-control" id="first-name" name="first-name" placeholder="First name" type="text" th:field="*{firstName}">
+            <label for="first-name">First name</label>
+        </div>
+
+        <div class="form-floating">
+            <input class="form-control" id="last-name" name="last-name" placeholder="Last name" type="text" th:field="*{lastName}">
+            <label for="last-name">Last name</label>
+        </div>
+
+        <div class="form-floating">
+            <input class="form-control" id="email" name="email" placeholder="Email" type="text" th:field="*{email}">
+            <label for="email">Email</label>
+        </div>
+
+        <div class="form-floating">
+            <input class="form-control" id="password" name="password" placeholder="Password" type="password" th:field="*{password}">
+            <label for="password">Password</label>
+        </div>
+
+        <button name="action" class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
